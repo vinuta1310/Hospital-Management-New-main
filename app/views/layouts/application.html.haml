@@ -26,4 +26,6 @@
 
   %body
     = render "layouts/nav"
-    = yield
+      
+    = turbo_frame_tag "main_content" do
+      = yield
