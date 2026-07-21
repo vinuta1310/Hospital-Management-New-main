@@ -3,7 +3,15 @@
 = link_to "New Hospital", new_hospital_path, data: { turbo_frame: "modal" }
 = turbo_frame_tag "modal"
 
-%div#hospital_body
-  - @hospitals.each do |hospital|
-    = render "hospital", hospital: hospital
+%h1 Hospitals
+
+%table{border: "1"}
+  %thead
+    %tr
+      %th ID
+      %th Name
+      %th Action 
+  
+  %tbody#hospital_body
+    = render @hospitals
 
