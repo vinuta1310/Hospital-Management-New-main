@@ -1,5 +1,8 @@
-= turbo_frame_tag dom_id(hospital) do
-  %div
-    = hospital.name
-    = link_to "Edit", edit_hospital_path(hospital)
-    = link_to "Delete", hospital_path(hospital), data: { turbo_method: :delete }
+%tr{id: dom_id(hospital)}
+  %td= hospital.id
+  %td= hospital.name
+
+  %td
+    = turbo_frame_tag dom_id(hospital) do
+      = link_to "Edit", edit_hospital_path(hospital)
+      = link_to "Delete", hospital_path(hospital), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }
