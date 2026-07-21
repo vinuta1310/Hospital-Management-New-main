@@ -1,21 +1,9 @@
-%div{style: "display:flex; justify-content:center;"}
-  %div
-    %h1{style:"color:navy;"} Hospitals
-    - if notice
-      %p{color: "red"}
-        =notice
+#flash_message
 
-    = link_to "New hospital", new_hospital_path
+= link_to "New Hospital", new_hospital_path, data: { turbo_frame: "modal" }
+= turbo_frame_tag "modal"
 
-    %table{border: "1"}
-      %thead
-        %tr
-          %th Name
-          %th{colspan: "3"} Actions
-      %tbody
-        - @hospitals.each do |hospital|
-          %tr    
-            %td= hospital.name
-            %td= link_to "Show", hospital_path(hospital)
-            %td= link_to "Edit", edit_hospital_path(hospital)
-            %td= link_to "Delete", hospital_path(hospital), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%div#hospital_body
+  - @hospitals.each do |hospital|
+    = render "hospital", hospital: hospital
+

@@ -1,0 +1,5 @@
+= turbo_stream.remove dom_id(@hospital)
+
+= turbo_stream.update "flash_message" do
+  %p{style: "color: red;"}
+    #{@hospital.name} deleted successfully

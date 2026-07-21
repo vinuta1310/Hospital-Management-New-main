@@ -1,2 +1,2 @@
-%h1 New Hospital 
-= render "form", hospital: @hospital
+= turbo_frame_tag "modal" do
+  = render "form", hospital: @hospital

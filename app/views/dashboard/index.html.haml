@@ -1,0 +1,10 @@
+%h1 Dashboard
+
+%div{style: "display:flex; gap:20px; margin-bottom:20px;"}
+  = link_to "Hospitals", dashboard_hospitals_path, data: {turbo_frame: "dashboard_content", turbo_action: "advance"}
+  = link_to "Doctors", dashboard_doctors_path, data: {turbo_frame: "dashboard_content", turbo_action: "advance"}
+  = link_to "Patients", dashboard_patients_path, data: {turbo_frame: "dashboard_content", turbo_action: "advance"}
+
+= turbo_frame_tag "dashboard_content" do
+  %p Select a tab
+  

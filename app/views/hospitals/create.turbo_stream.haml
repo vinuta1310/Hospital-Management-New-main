@@ -1,0 +1,8 @@
+= turbo_stream.prepend "hospital_body" do
+  = render "hospital", hospital: @hospital
+
+= turbo_stream.update "modal", ""
+
+= turbo_stream.update "flash_message" do
+  %p{style: "color: green;"}
+    #{@hospital.name} created successfully
