@@ -34,7 +34,6 @@ class PatientsController < ApplicationController
 
   def destroy
     @patient.destroy
-    redirect_to patients_path, notice: "Patient deleted successfully"
   end
 
   private

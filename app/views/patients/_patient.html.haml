@@ -4,3 +4,10 @@
   %td= patient.age
   %td= patient.gender
   %td= patient.born_on
+
+  %td
+    = turbo_frame_tag(dom_id(patient)) do
+      = link_to "Delete", patient_path(patient), data: { turbo_method: :delete, turbo_confirm: "Are your sure?" }
+
+      
+
