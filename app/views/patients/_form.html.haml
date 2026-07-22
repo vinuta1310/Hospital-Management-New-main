@@ -3,5 +3,5 @@
     = form.input :name
     = form.input :age
     = form.input :gender, as: :radio_buttons, collection: ['Male', 'Female']
-    = form.input :born_on
+    = form.input :born_on, as: :date, html5: true
     = form.submit
