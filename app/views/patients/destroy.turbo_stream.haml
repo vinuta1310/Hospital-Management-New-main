@@ -1,0 +1,5 @@
+= turbo_stream.remove dom_id(@patient)
+
+= turbo_stream.update "notification" do
+  %p{style: "color: red;"}
+    #{@patient.name} deleted successfully

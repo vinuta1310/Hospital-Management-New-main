@@ -1,2 +1,2 @@
-%h1 New Patient
-= render "form", patient: @patient
+= turbo_frame_tag "modal" do
+  = render "form", patient: @patient

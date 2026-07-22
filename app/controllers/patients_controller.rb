@@ -18,7 +18,6 @@ class PatientsController < ApplicationController
     @patient = Patient.new(params_patient)
 
     if @patient.save
-      redirect_to patients_path, notice: "Patient #{@patient.name} created successfully"
     else
       render :new, status: :unprocessable_entity
     end
@@ -26,7 +25,6 @@ class PatientsController < ApplicationController
 
   def update
     if @patient.update(params_patient)
-      redirect_to patients_path, notice: "Patient #{@patient.name} updated successfully"
     else
       render :edit, status: :unprocessable_entity
     end
@@ -34,7 +32,6 @@ class PatientsController < ApplicationController
 
   def destroy
     @patient.destroy
-    redirect_to patients_path, notice: "Patient deleted successfully"
   end
 
   private
