@@ -18,7 +18,6 @@ class PatientsController < ApplicationController
     @patient = Patient.new(params_patient)
 
     if @patient.save
-      redirect_to patients_path, notice: "Patient #{@patient.name} created successfully"
     else
       render :new, status: :unprocessable_entity
     end
