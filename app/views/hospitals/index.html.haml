@@ -1,17 +1,18 @@
-#flash_message
+= turbo_frame_tag "tab" do
+  #flash_message
 
-= link_to "New Hospital", new_hospital_path, data: { turbo_frame: "modal" }
-= turbo_frame_tag "modal"
+  = link_to "New Hospital", new_hospital_path, data: { turbo_frame: "modal" }
+  = turbo_frame_tag "modal"
 
-%h1 Hospitals
+  %h1 Hospitals
 
-%table{border: "1"}
-  %thead
-    %tr
-      %th ID
-      %th Name
-      %th Action 
-  
-  %tbody#hospital_body
-    = render @hospitals
+  %table{border: "1"}
+    %thead
+      %tr
+        %th ID
+        %th Name
+        %th Action 
+    
+    %tbody#hospital_body
+      = render @hospitals
 
