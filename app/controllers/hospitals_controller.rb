@@ -1,8 +1,7 @@
 class HospitalsController < ApplicationController
   before_action :set_hospital, only: %i[show edit destroy update]
   def index
-    @hospitals = Hospital.all
-    @hospital = Hospital.new
+      @hospitals = Hospital.page(params[:page]).per(20)    
   end
 
   def new
