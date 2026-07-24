@@ -1,4 +1,4 @@
 class Hospital < ApplicationRecord
   has_many :doctors
-  validates :name, presence: true
+  validates :name, :admin_email, presence: true
 end
