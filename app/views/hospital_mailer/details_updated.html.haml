@@ -1,6 +1,11 @@
 %p Hello,
 
 %p 
-  The details of 
+  The following details of 
   %strong= @hospital.name 
   have been successfully updated.
+
+%ul 
+  - @changes.each do |attribute, values|
+    %li= "#{attribute}-> From: #{values[0]} To: #{values[1]}"
+  
