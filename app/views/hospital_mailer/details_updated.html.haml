@@ -1,6 +1,17 @@
 %p Hello,
 
 %p 
-  The details of 
+  The following details of 
   %strong= @hospital.name 
   have been successfully updated.
+
+%ul 
+  - @changes.each do |attribute, values|
+    %li
+      %strong= "#{attribute.humanize} "
+      = "->"
+      %strong From:
+      = " #{values[0]} "
+      %strong To:
+      = " #{values[1]}"
+  
